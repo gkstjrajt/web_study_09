@@ -1,4 +1,4 @@
-package web_study_09.test;
+package web_study_09.ds;
 
 import static org.junit.Assert.*;
 
