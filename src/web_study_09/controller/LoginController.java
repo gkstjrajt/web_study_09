@@ -51,7 +51,6 @@ public class LoginController extends HttpServlet {
 				request.setAttribute("message", "비밀번호가 맞지 않습니다.");
 			}
 		}
-		
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 
