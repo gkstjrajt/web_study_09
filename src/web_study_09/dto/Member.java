@@ -31,6 +31,16 @@ public class Member {
 		this.joinDate = joinDate;
 	}
 
+	public Member(String name, String userId, String pwd, String email, String phone, int admin) {
+		super();
+		this.name = name;
+		this.userId = userId;
+		this.pwd = pwd;
+		this.email = email;
+		this.phone = phone;
+		this.admin = admin;
+	}
+
 	@Override
 	public String toString() {
 		return String.format("Member [name=%s, userId=%s, pwd=%s, email=%s, phone=%s, admin=%s, joinDate=%s]", name,

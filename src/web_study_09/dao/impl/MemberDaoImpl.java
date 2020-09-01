@@ -73,7 +73,7 @@ public class MemberDaoImpl implements MemberDao {
 
 	@Override
 	public int insertMember(Member member) {
-		String sql = "INSERT INTO MEMBER VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO MEMBER(NAME, USERID, PWD, EMAIL, PHONE, ADMIN) VALUES(?,?,?,?,?,?)";
 		try(Connection con = JdbcUtil.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(sql)){
 					pstmt.setString(1, member.getName());
@@ -82,11 +82,11 @@ public class MemberDaoImpl implements MemberDao {
 					pstmt.setString(4, member.getEmail());
 					pstmt.setString(5, member.getPhone());
 					pstmt.setInt(6, member.getAdmin());
-					pstmt.setTimestamp(7, new Timestamp(member.getJoinDate().getTime()));
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
-			throw new RuntimeException();
+			e.printStackTrace();
 		}
+		return 0;
 	}
 
 	@Override
