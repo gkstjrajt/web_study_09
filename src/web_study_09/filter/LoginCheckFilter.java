@@ -26,7 +26,7 @@ public class LoginCheckFilter implements Filter {
 		if(session != null && session.getAttribute("loginUser") != null) {			// 로그인 유무 체크
 			chain.doFilter(request, response);										// 로그인 했으면 다음필터
 		} else {
-			request.getRequestDispatcher("login.do").forward(request, response);// 로그인 안한거니 로그인 페이지로
+			request.getRequestDispatcher("login.do").forward(request, response);	// 로그인 안한거니 로그인 페이지로
 		}
 		
 	}
