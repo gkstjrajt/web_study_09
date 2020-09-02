@@ -28,12 +28,16 @@ public class LoginController extends HttpServlet {
 		String url = "member/login.jsp";
 		
 		if (request.getMethod().equalsIgnoreCase("get")) {
+			HttpSession session = request.getSession();
+			if(session.getAttribute("loginUser") != null) {
+				url = "main.jsp";
+			}
 			request.getRequestDispatcher(url).forward(request, response);
 		}
 		
 		String userId = request.getParameter("userId");
 		String pwd = request.getParameter("pwd");
-		System.out.printf("userId %s pwd  %s%n",userId ,pwd);
+		System.out.printf("userId : %s pwd : %s%n",userId ,pwd);
 		
 		Member findMember = new Member(userId);
 		Member resMember = service.getMember(findMember);

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import sun.rmi.transport.proxy.HttpReceiveSocket;
 
-@WebFilter("/*")
+@WebFilter(urlPatterns = {"/main.jsp"})
 public class LoginCheckFilter implements Filter {
 
 	public void destroy() {}
